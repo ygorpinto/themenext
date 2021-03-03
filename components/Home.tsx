@@ -4,11 +4,17 @@ import { Loading } from './Loading'
 import Switch from 'react-switch'
 import {ThemeProvider} from 'styled-components'
 import {ThemeContext} from 'styled-components'
+import light from '../styles/themes/light'
+import dark from '../styles/themes/dark'
+import { GlobalStyles } from '../styles/global'
 
 
 export const HomeTitle = () => {
 
-    const [isLoading, setIsLoading] = useState(true)
+    const [theme, setTheme] = useState(light)
+    const [checked, setChecked] = useState(false)
+    const [isLoading, setIsLoading] = useState(true);
+    const { colors, title } = useContext(ThemeContext);
     
     useEffect(() => {
         setTimeout(() => {
@@ -16,6 +22,10 @@ export const HomeTitle = () => {
         }, 1800)
     }, [])
 
+    const handleTheme = () => {
+        setTheme(theme.title === "light" ? dark : light)
+        setChecked(checked ? false : true )
+    }
 
     if (isLoading === true) {
         return (
@@ -24,21 +34,29 @@ export const HomeTitle = () => {
     }
 
     return (
+        <>
+        <ThemeProvider theme={theme}>
+        <GlobalStyles/>
         <HomeContainer>
+            <div className="switch">
             <Switch 
-            checked={true}
-            onChange={()=>{}}
+            checked={checked}
+            onChange={handleTheme}
             checkedIcon={false}
             uncheckedIcon={false}
             height={20}
-            width={40}
-            handleDiameter={40}
-            offColor=""
-            onColor=""
+            width={50}
+            handleDiameter={25}
+            offHandleColor={colors.text}
+            offColor={colors.primary}
+            onColor={colors.secondary}
             />
+            </div>
             <header><div>Y</div><div>g</div><div>o</div><div>r</div>
                 <div>F</div><div>e</div><div>r</div><div>r</div><div>e</div><div>i</div><div>r</div><div>a</div><div>.</div></header>
         </HomeContainer>
+        </ThemeProvider>
+        </>
     )
 }
 
@@ -48,6 +66,7 @@ const HomeContainer = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
+    background-color:${props=>props.theme.colors.background};
 
 header{
 
@@ -60,9 +79,16 @@ header{
     div{
         
     :hover{
-        color: #f52c74;
+        color: ${light.colors.secondary};
     }
     }
 }
+
+.switch{
+    position:absolute;
+    top:3%;
+    left:3%;
+}
+
 `
 
