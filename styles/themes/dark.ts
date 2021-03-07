@@ -7,7 +7,7 @@ export default {
         secondary:'#f52c74',
         background:'#1f1d1d',
         title:'#f7f3f3',
-        text:'#f8f8f8'
+        text:'#757070'
     }
 
 }

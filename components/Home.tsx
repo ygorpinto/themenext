@@ -47,9 +47,10 @@ export const HomeTitle = () => {
             height={20}
             width={50}
             handleDiameter={25}
-            offHandleColor={colors.text}
-            offColor={colors.primary}
-            onColor={colors.secondary}
+            offHandleColor={theme.colors.background}
+            onHandleColor={theme.colors.background}
+            offColor={theme.colors.text}
+            onColor={theme.colors.text}
             />
             </div>
             <header><div>Y</div><div>g</div><div>o</div><div>r</div>
