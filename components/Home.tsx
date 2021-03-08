@@ -14,7 +14,6 @@ export const HomeTitle = () => {
     const [theme, setTheme] = useState(light)
     const [checked, setChecked] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
-    const { colors, title } = useContext(ThemeContext);
     
     useEffect(() => {
         setTimeout(() => {
@@ -47,8 +46,10 @@ export const HomeTitle = () => {
             height={20}
             width={50}
             handleDiameter={25}
-            offHandleColor={theme.colors.background}
             onHandleColor={theme.colors.background}
+            offHandleColor={theme.colors.background}
+            checkedHandleIcon={<div>☀️</div>}
+            uncheckedHandleIcon={<div>🌘</div>}
             offColor={theme.colors.text}
             onColor={theme.colors.text}
             />
