@@ -1,12 +1,11 @@
-import { useContext, useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { Loading } from './Loading'
+import { useEffect, useState } from 'react'
+import { Loading } from '../Loading'
 import Switch from 'react-switch'
 import {ThemeProvider} from 'styled-components'
-import {ThemeContext} from 'styled-components'
-import light from '../styles/themes/light'
-import dark from '../styles/themes/dark'
-import { GlobalStyles } from '../styles/global'
+import light from '../../styles/themes/light'
+import dark from '../../styles/themes/dark'
+import { GlobalStyles } from '../../styles/global'
+import { HomeStyles } from './HomeStyles'
 
 
 export const HomeTitle = () => {
@@ -31,20 +30,19 @@ export const HomeTitle = () => {
             <Loading />
         )
     }
-
     return (
         <>
-        <ThemeProvider theme={theme}>
         <GlobalStyles/>
-        <HomeContainer>
+        <ThemeProvider theme={theme}>
+        <HomeStyles>
             <div className="switch">
             <Switch 
             checked={checked}
             onChange={handleTheme}
             checkedIcon={false}
             uncheckedIcon={false}
-            height={20}
-            width={50}
+            height={10}
+            width={45}
             handleDiameter={25}
             onHandleColor={theme.colors.background}
             offHandleColor={theme.colors.background}
@@ -56,41 +54,10 @@ export const HomeTitle = () => {
             </div>
             <header><div>Y</div><div>g</div><div>o</div><div>r</div>
                 <div>F</div><div>e</div><div>r</div><div>r</div><div>e</div><div>i</div><div>r</div><div>a</div><div>.</div></header>
-        </HomeContainer>
+            <div className="subTitle"></div>
+        </HomeStyles>
         </ThemeProvider>
         </>
     )
 }
-
-const HomeContainer = styled.div`
-    height:100vh;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color:${props=>props.theme.colors.background};
-
-header{
-
-    display:flex;
-
-    font-family: 'Roboto', sans-serif;
-    font-size: 6rem;
-    letter-spacing: 3px;
-
-    div{
-        
-    :hover{
-        color: ${light.colors.secondary};
-    }
-    }
-}
-
-.switch{
-    position:absolute;
-    top:3%;
-    left:3%;
-}
-
-`
 

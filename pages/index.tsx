@@ -1,4 +1,4 @@
-import { HomeTitle } from "../components/Home"
+import { HomeTitle } from "../components/Home/HomeTitle"
 
 
 export default function Home() {
