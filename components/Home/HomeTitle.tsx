@@ -54,7 +54,9 @@ export const HomeTitle = () => {
             </div>
             <header><div>Y</div><div>g</div><div>o</div><div>r</div>
                 <div>F</div><div>e</div><div>r</div><div>r</div><div>e</div><div>i</div><div>r</div><div>a</div><div>.</div></header>
-            <div className="subTitle"></div>
+            <div className="subTitle">
+                <p>Front-end Developer</p>
+            </div>
         </HomeStyles>
         </ThemeProvider>
         </>
