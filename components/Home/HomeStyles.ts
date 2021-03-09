@@ -9,16 +9,14 @@ export const HomeStyles = styled.div`
     background-color:${props=>props.theme.colors.background};
 
 header{
-
     margin:0;
-
     display:flex;
-
     font-family: 'Poppins', sans-serif;
     font-size: 6rem;
     letter-spacing: 3px;
 
     div{
+        color:${props=>props.theme.colors.title};
         margin-top:3%;    
     :hover{
         color: ${props=>props.theme.colors.secondary};
@@ -36,8 +34,8 @@ header{
     font-family: 'Architects Daughter', cursive;
     font-size:2rem;
     p{
+        color:${props=>props.theme.colors.title};
         margin:0;
     }
 }
-
 `
