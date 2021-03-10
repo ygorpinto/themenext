@@ -21,7 +21,8 @@ header{
         border-right:3px solid rgba(0,0,0,0.5);
         animation: 
         blinkCursor 500ms steps(40) infinite normal,
-        typingTitle 3s steps(30) normal both;
+        typingTitle 3s steps(30) normal both,
+        hideborder 1s 4s infinite normal;
         color:${props=>props.theme.colors.title};
         margin-top:3%;    
         white-space:nowrap;
@@ -45,7 +46,8 @@ header{
     p{  
         animation: 
         blinkCursor 400ms steps(30) infinite normal,
-        typing 3s steps(30) 4s normal both;
+        typing 3s steps(30) 4s normal both,
+        hideborder 1s 8s infinite normal;
         border-right:2px solid rgba(0,0,0,0.5);
         color:${props=>props.theme.colors.title};
         margin:0;
@@ -74,14 +76,23 @@ header{
         }
     }
 
-    @keyframes typing {
-        from {
+@keyframes typing {
+    from {
             width:0;
-        }
+    }
         
-        to {
+    to {
             width:21rem;
         }
     }
 
+@keyframes hideborder {
+    from {
+        border-right-color:transparent;
+    }
+
+    to {
+        border-right-color:transparent;
+    }
+}
 `
