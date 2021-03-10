@@ -45,7 +45,7 @@ header{
     p{  
         animation: 
         blinkCursor 400ms steps(30) infinite normal,
-        typing 3s steps(30) 4s normal both;
+        typing 3s steps(30) 4s normal;
         border-right:2px solid rgba(0,0,0,0.5);
         color:${props=>props.theme.colors.title};
         margin:0;

@@ -54,7 +54,7 @@ export const HomeTitle = () => {
             onColor={theme.colors.text}
             />
             </div>
-            <header><h1>Ygor Ferreira.</h1></header>
+            <header><p>.</p></header>
             <div className="subTitle">
                 <p>Front-end Developer.</p>
             </div>
