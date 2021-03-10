@@ -35,11 +35,14 @@ header{
     font-family: 'Architects Daughter', cursive;
     font-size:2rem;
     p{  
-        animation: blinkCursor 800ms infinite normal;
+        animation: 
+        blinkCursor 400ms steps(30) infinite normal,
+        typing 3s steps(30) normal;
         border-right:2px solid rgba(0,0,0,0.5);
         color:${props=>props.theme.colors.title};
         margin:0;
-    
+        white-space:nowrap;
+        overflow:hidden;
     }
 }
 
@@ -52,5 +55,15 @@ header{
                 border-right-color:transparent;
             }
         }
+
+@keyframes typing {
+        from {
+            width:0;
+        }
+        
+        to {
+            width:20rem;
+        }
+    }
 
 `
