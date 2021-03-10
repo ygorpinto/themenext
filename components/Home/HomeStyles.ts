@@ -31,11 +31,26 @@ header{
 }
 
 .subTitle{
+    
     font-family: 'Architects Daughter', cursive;
     font-size:2rem;
-    p{
+    p{  
+        animation: blinkCursor 800ms infinite normal;
+        border-right:2px solid rgba(0,0,0,0.5);
         color:${props=>props.theme.colors.title};
         margin:0;
+    
     }
 }
+
+@keyframes blinkCursor {
+            from {
+                border-right-color:rgba(0,0,0,0.5);
+            }
+        
+            to {
+                border-right-color:transparent;
+            }
+        }
+
 `
