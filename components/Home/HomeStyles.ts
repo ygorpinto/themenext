@@ -45,10 +45,10 @@ header{
     font-size:2rem;
     p{  
         animation: 
-        blinkCursor 400ms steps(30) infinite normal,
+        blinkCursor 400ms steps(30) 4s infinite normal,
         typing 3s steps(30) 4s normal both,
         hideborder 1s 8s infinite normal;
-        border-right:2px solid rgba(0,0,0,0.5);
+        border-right:2px solid rgba(0,0,0,0.0);
         color:${props=>props.theme.colors.title};
         margin:0;
         white-space:nowrap;
