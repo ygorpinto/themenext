@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Loading } from '../Loading'
+import { Loading } from '../Loading/Loading'
 import Switch from 'react-switch'
 import {ThemeProvider} from 'styled-components'
 import light from '../../styles/themes/light'
 import dark from '../../styles/themes/dark'
 import { GlobalStyles } from '../../styles/global'
 import { HomeStyles } from './HomeStyles'
+import { Me } from '../Me/ProfileImage'
+import { ProfileImageStyles } from '../Me/ProfileImageStyles'
 
 
 export const HomeTitle = () => {
@@ -25,9 +27,9 @@ export const HomeTitle = () => {
         setChecked(checked ? false : true )
     }
 
-    if (isLoading === true) {
+    if (isLoading) {
         return (
-            <Loading />
+            <Loading/>
         )
     }
     return (
@@ -57,6 +59,7 @@ export const HomeTitle = () => {
             <div className="subTitle">
                 <p>Front-end Developer</p>
             </div>
+                <Me/>
         </HomeStyles>
         </ThemeProvider>
         </>
